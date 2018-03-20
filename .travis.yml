@@ -15,8 +15,8 @@ before_install:
 - sfdx update
 - sfdx --version
 - sfdx plugins --core
-- sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key
-  --username $USERNAME --setdefaultdevhubusername -a HubOrg
+- sfdx force:auth:jwt:grant --clientid 3MVG95NPsF2gwOiNTwmli5bg3S7lKdR3emvK2HFmAnMzghaB0Edf8baNm95baOold2.9P397Kj2b_vwDxjHda --username dino.zg@gmail.com.devhub --jwtkeyfile assets/server.key --setdefaultdevhubusername
+#- sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key --username $USERNAME --setdefaultdevhubusername -a HubOrg
 script:
 - sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg &&
   sfdx force:source:push -u ciorg && sfdx force:apex:test:run -u ciorg -c -r human
